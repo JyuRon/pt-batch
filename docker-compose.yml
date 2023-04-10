@@ -1,0 +1,23 @@
+# 해당 버전은 yml 파일에 대한 문서 버전 표기며 docker engine 버전 마다 표기가 달라진다.
+# https://docs.docker.com/compose/compose-file/compose-versioning/
+version: "3.8"
+services: # 컨테이너의 집합체
+  mysql: # 컨테이너 명 설정
+    container_name: mysql_local # 컨테이너명 custom
+    image: mysql:8.0.30
+
+    # 도커 컨테니어 삭제시 안에 존재하는 데이터 또한 삭제됨
+    # 이러한 생명주기와 상관없이 데이터를 유지 할 수 있도록 함
+    # https://docs.docker.com/storage/volumes/
+    # 호스트 디렉토리 : 컨테이너
+    volumes:
+      - ./db/conf.d:/etc/mysql/conf.d # 해당 설정의 경우 my.cnf 파일(mysql 에 대한 설정 정보)를 공유하기 위함
+      - ./db/initdb.d:/docker-entrypoint-initdb.d # entrypoint 의 들어간 sh, sql 파일을 실행하기 때문에 자동 실행을 위함
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=pass_local
+      - MYSQL_USER=jyuka
+      - MYSQL_PASSWORD=1234
+      - MYSQL_ROOT_PASSWORD=1234
+      - TZ=Asia/Seoul
