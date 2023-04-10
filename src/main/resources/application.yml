@@ -1,0 +1,9 @@
+spring:
+  config:
+    activate:
+      on-profile: default
+  datasource:
+    url: jdbc:h2:mem:mydb
+    driver-class-name: org.h2.Driver
+    username: jyuka
+    password: 1234
