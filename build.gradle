@@ -53,6 +53,9 @@ dependencies {
     // WebClient
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // AsyncItemProcessor, AsyncItemWriter
+    implementation 'org.springframework.batch:spring-batch-integration'
 }
 
 tasks.named('test') {
