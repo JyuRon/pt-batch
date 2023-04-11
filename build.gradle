@@ -46,6 +46,9 @@ dependencies {
 
     // hibernate-types
     implementation 'com.vladmihalcea:hibernate-types-52:2.19.2'
+
+    // @ConfigurationProperties
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 }
 
 tasks.named('test') {
