@@ -13,6 +13,10 @@ spring:
   batch:
     jdbc:
       initialize-schema: always
+    job:
+      enabled: false # 기본값이 true 인 경우 SpringBoot 실행 시 등록되어 있는 job 들이 실행
+server:
+  port: 8082
 ---
 # profile=test에서 사용하는 application 파일입니다.
 # 로깅 프레임워크의 어떠한 최적화도 없이 출력하기 때문에 환경에 따라 사용 여부를 결정해야 합니다.
