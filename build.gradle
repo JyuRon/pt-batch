@@ -49,6 +49,10 @@ dependencies {
 
     // @ConfigurationProperties
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
+    // WebClient
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
 }
 
 tasks.named('test') {
