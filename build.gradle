@@ -56,6 +56,9 @@ dependencies {
 
     // AsyncItemProcessor, AsyncItemWriter
     implementation 'org.springframework.batch:spring-batch-integration'
+
+    // csv
+    implementation 'com.opencsv:opencsv:5.7.0'
 }
 
 tasks.named('test') {
